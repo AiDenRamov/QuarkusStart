@@ -9,3 +9,8 @@ pluginManagement {
     }
 }
 rootProject.name='quarkus-getting-started'
+
+// Define the project name.
+// Add subprojects.
+// only with DSL(Domain Specific Language) Languages (Groovy/ Kotlin)
+// include("sub-project-a")

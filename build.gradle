@@ -1,13 +1,17 @@
+// details build configuration, tasks, and plugins
+
 plugins {
     id 'java'
     id 'io.quarkus'
 }
 
+// why maven? for compatibility?
 repositories {
     mavenCentral()
     mavenLocal()
 }
 
+// Requiered Libraries
 dependencies {
     implementation enforcedPlatform("${quarkusPlatformGroupId}:${quarkusPlatformArtifactId}:${quarkusPlatformVersion}")
     implementation 'io.quarkus:quarkus-arc'
@@ -35,3 +39,4 @@ compileJava {
 compileTestJava {
     options.encoding = 'UTF-8'
 }
+
