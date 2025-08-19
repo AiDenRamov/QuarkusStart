@@ -15,7 +15,7 @@ public class GreetingResourceHelloworld {
     public String hello(@QueryParam("msg") String msg) {
         String response = "Hello World";
         // msg=from%20me
-        // Falls der Parameter msg = from%20me   %ist eine Leerzeile in url und die 20 hexadezimal?
+        // Falls der Parameter msg = from%20me   %20 ist eine Leerzeile in ASCII
         if("from me".equals(msg)){
             response = response + " from me";
         }
