@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        table { border-collapse: collapse; margin: 1rem; }
+        th, td { border: 2px solid black; padding: 0.5rem; text-align: center; }
+        th { background-color: #e3d5b4; }
+        /* Spezifische Klasse für die erste Tabelle */
+        .pink-header th {
+            background-color: #bc6b85;
+        }
+
+        .blue-header th {
+            background-color: #92a1dd;
+        }
+
+        .green-header th {
+            background-color: #a7f187;
+        }
+
+    </style>
+</head>
+<body>
+
+    <h1>Logische UND-Verknüpfung (a && b)</h1>
+    <table class="pink-header">
+        <thead> 
+            <tr>
+                <th>a</th>
+                <th>b</th>
+                <th>a && b</th>
+            </tr>
+        </thead>
+        <tbody>
+            {#for row in andRows}
+            <tr>
+                <td>{row.a}</td>
+                <td>{row.b}</td>
+                <td>{row.result}</td>
+            </tr>
+            {/for}
+        </tbody>
+    </table>
+
+    <h1>Logische ODER-Verknüpfung (a || b)</h1>
+    <table class="green-header">
+        <thead>
+            <tr>
+                <th>a</th>
+                <th>b</th>
+                <th>a || b</th>
+            </tr>
+        </thead>
+        <tbody>
+            {#for row in orRows}
+            <tr>
+                <td>{row.a}</td>
+                <td>{row.b}</td>
+                <td>{row.result}</td>
+            </tr>
+            {/for}
+        </tbody>
+    </table>
+
+    <h1>Logische NOT-Verknüpfung (a ! b)</h1>
+    <table class="blue-header">
+        <thead>
+            <tr>
+                <th>a</th>
+                <th>a ! b</th>
+            </tr>
+        </thead>
+        <tbody>
+            {#for row in notRows}
+            <tr>
+                <td>{row.a}</td>
+                <td>{row.result}</td>
+            </tr>
+            {/for}
+        </tbody>
+    </table>
+
+    <h1>Logische XOR-Verknüpfung (a ^ b)</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>a</th>
+                <th>b</th>
+                <th>a ^ b</th>
+            </tr>
+        </thead>
+        <tbody>
+            {#for row in xorRows}
+            <tr>
+                <td>{row.a}</td>
+                <td>{row.b}</td>
+                <td>{row.result}</td>
+            </tr>
+            {/for}
+        </tbody>
+    </table>
+</body>
+
+</html>

@@ -13,13 +13,13 @@ repositories {
 
 // Requiered Libraries
 dependencies {
-    
-    // sqlight JDBC Treiber Abhängigkeit
-    implementation 'io.quarkiverse.jdbc:quarkus-jdbc-sqlite:3.0.11'
 
     implementation enforcedPlatform("${quarkusPlatformGroupId}:${quarkusPlatformArtifactId}:${quarkusPlatformVersion}")
     implementation 'io.quarkus:quarkus-arc'
     implementation 'io.quarkus:quarkus-rest'
+
+    implementation 'io.quarkus:quarkus-qute'
+    
     testImplementation 'io.quarkus:quarkus-junit5'
     testImplementation 'io.rest-assured:rest-assured'
 }
