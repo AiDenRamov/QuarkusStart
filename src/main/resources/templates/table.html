@@ -5,7 +5,8 @@
         table { border-collapse: collapse; margin: 1rem; }
         th, td { border: 2px solid black; padding: 0.5rem; text-align: center; }
         th { background-color: #e3d5b4; }
-        /* Spezifische Klasse für die erste Tabelle */
+
+        /* Spezifische Klassen für die Tabellen */
         .pink-header th {
             background-color: #bc6b85;
         }
@@ -14,8 +15,8 @@
             background-color: #92a1dd;
         }
 
-        .green-header th {
-            background-color: #a7f187;
+        .orange-header th {
+            background-color: #f19c87;
         }
 
     </style>
@@ -36,14 +37,19 @@
             <tr>
                 <td>{row.a}</td>
                 <td>{row.b}</td>
-                <td>{row.result}</td>
+                {#if row.result}
+                    <td bgcolor="#a7f187">{row.result}</td>
+                {#else}
+                    <td>{row.result}</td>
+                {/if}
+
             </tr>
             {/for}
         </tbody>
     </table>
 
     <h1>Logische ODER-Verknüpfung (a || b)</h1>
-    <table class="green-header">
+    <table class="orange-header">
         <thead>
             <tr>
                 <th>a</th>
@@ -56,7 +62,35 @@
             <tr>
                 <td>{row.a}</td>
                 <td>{row.b}</td>
-                <td>{row.result}</td>
+                {#if row.result}
+                    <td bgcolor="#a7f187">{row.result}</td>
+                {#else}
+                    <td>{row.result}</td>
+                {/if}
+            </tr>
+            {/for}
+        </tbody>
+    </table>
+    
+    <h1>Logische XOR-Verknüpfung (a ^ b)</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>a</th>
+                <th>b</th>
+                <th>a ^ b</th>
+            </tr>
+        </thead>
+        <tbody>
+            {#for row in xorRows}
+            <tr>
+                <td>{row.a}</td>
+                <td>{row.b}</td>
+                {#if row.result}
+                    <td bgcolor="#a7f187">{row.result}</td>
+                {#else}
+                    <td>{row.result}</td>
+                {/if}
             </tr>
             {/for}
         </tbody>
@@ -74,31 +108,17 @@
             {#for row in notRows}
             <tr>
                 <td>{row.a}</td>
-                <td>{row.result}</td>
+                {#if row.result}
+                    <td bgcolor="#a7f187">{row.result}</td>
+                {#else}
+                    <td>{row.result}</td>
+                {/if}
             </tr>
             {/for}
         </tbody>
     </table>
 
-    <h1>Logische XOR-Verknüpfung (a ^ b)</h1>
-    <table>
-        <thead>
-            <tr>
-                <th>a</th>
-                <th>b</th>
-                <th>a ^ b</th>
-            </tr>
-        </thead>
-        <tbody>
-            {#for row in xorRows}
-            <tr>
-                <td>{row.a}</td>
-                <td>{row.b}</td>
-                <td>{row.result}</td>
-            </tr>
-            {/for}
-        </tbody>
-    </table>
+
 </body>
 
 </html>
