@@ -21,7 +21,7 @@ dependencies {
     implementation 'io.quarkus:quarkus-qute'
 
     // mariadb datenbanktreiber
-    implementation 'io.quarqus:quarkus-jdbc-mariadb'
+    implementation 'io.quarkus:quarkus-jdbc-mariadb'
     
     // ORM Object-Relational Mapping
     // Object -> Tabellen übersetzung 
