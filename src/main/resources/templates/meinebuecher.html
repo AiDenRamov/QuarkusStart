@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Meine Bücher</title>
+</head>
+<body>
+    <h1>Meine Büchersammlung</h1>
+    
+    <ul>
+        <!-- Zeigt alle Bücher -->
+        {#for buch in buecher}
+            <li>{buch.titel}
+            <!-- Formular zum Löschen von Büchern neben jeden einen Knopf
+            für jedes Buch erstellen wir ein Formular, das die ID des Buches 
+            in der URL mitgibt -->
+            <form action="/mariadb/buecher/delete/{buch.id}" method="post"><!-- Ruft buch.getId() auf -->
+                <button type="submit">Löschen</button>
+            </form>
+            </li>
+        {/for}
+    </ul>
+
+    <!-- Formular zum Hinzufügen von Büchern -->
+    <form action="/mariadb/buecher" method="post">
+        <label for="titel">Buchtitel:</label>
+        <input type="text" id="titel" name="titel" required>
+        <button type="submit">Buch hinzufügen</button>
+    </form>
+
+</body>
+</html>

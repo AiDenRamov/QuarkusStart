@@ -13,16 +13,19 @@ repositories {
 
 // Requiered Libraries
 dependencies {
-
-    implementation enforcedPlatform("${quarkusPlatformGroupId}:${quarkusPlatformArtifactId}:${quarkusPlatformVersion}")
-    implementation 'io.quarkus:quarkus-arc'
-    implementation 'io.quarkus:quarkus-rest'
-    // Template umgang (Frontend)
-    implementation 'io.quarkus:quarkus-qute'
-
     // mariadb datenbanktreiber
     implementation 'io.quarkus:quarkus-jdbc-mariadb'
     
+    // REST and JSON support
+    implementation 'io.quarkus:quarkus-rest-jackson'
+    implementation 'io.quarkus:quarkus-rest'
+
+    implementation enforcedPlatform("${quarkusPlatformGroupId}:${quarkusPlatformArtifactId}:${quarkusPlatformVersion}")
+    implementation 'io.quarkus:quarkus-arc'
+    
+    // Template umgang (Frontend)
+    implementation 'io.quarkus:quarkus-qute'
+
     // ORM Object-Relational Mapping
     // Object -> Tabellen übersetzung 
     // Hybernate und Panche bietet eine objekt-style Schreibweise, die weniger Boilerplate code anfordert
